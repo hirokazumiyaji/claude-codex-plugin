@@ -41,42 +41,32 @@ codex --version 2>/dev/null || echo "NOT_INSTALLED"
 > export OPENAI_API_KEY=sk-...
 > ```
 
-### 2. Gather Changes
+### 2. Run Codex Review
 
-Collect the diff to review:
-
-```bash
-# All uncommitted + committed changes vs HEAD
-git diff HEAD
-
-# Only staged changes
-git diff --cached
-
-# Compare against a specific branch
-git diff main...HEAD
-```
-
-### 3. Run Codex Review
-
-Pipe the diff to Codex for analysis:
+Use the built-in `codex review` subcommand. It automatically detects what to review and saves the full output to `.codex-review-output.md`.
 
 ```bash
-git diff HEAD | codex --approval-mode full-auto \
-  "Review these code changes. Identify bugs, security vulnerabilities, \
-   performance issues, and code quality problems. \
-   Be specific about file paths and line numbers. \
-   Group findings by severity: Critical, High, Medium, Low."
+# Review staged changes (default)
+codex review
+
+# Review all local changes (staged + unstaged + untracked)
+codex review --uncommitted
+
+# Review changes against a specific base branch
+codex review --base main
+
+# Review a specific commit
+codex review --commit <sha>
 ```
 
-For a review against a base branch (e.g., `main`):
+You can also pass an optional prompt to focus the review on specific concerns:
 
 ```bash
-git diff main...HEAD | codex --approval-mode full-auto \
-  "Review these code changes comprehensively. \
-   Identify any bugs, security issues, or quality concerns."
+codex review "focus on security vulnerabilities and performance issues"
+codex review --base main "check for breaking API changes"
 ```
 
-### 4. Present Results
+### 3. Present Results
 
 Group findings by severity and create a task list for actionable issues:
 
@@ -96,7 +86,7 @@ Group findings by severity and create a task list for actionable issues:
 - [ ] `src/components/Button.tsx:5` — Unused import `React` (not needed with new JSX transform)
 ```
 
-### 5. Fix Issues (Autonomous Workflow)
+### 4. Fix Issues (Autonomous Workflow)
 
 When the user requests implementation + review:
 

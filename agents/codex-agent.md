@@ -57,7 +57,23 @@ If not installed, guide the user through the installation steps above.
 
 ### 3. Invoke Codex CLI
 
-Run Codex non-interactively with a well-scoped prompt:
+For **code review**, use the dedicated subcommand:
+
+```bash
+# Review staged changes (default)
+codex review
+
+# Review all local changes
+codex review --uncommitted
+
+# Review against a base branch
+codex review --base main
+
+# Focus the review with an optional prompt
+codex review "focus on security and performance"
+```
+
+For **all other tasks** (generation, refactoring, debugging, tests), run Codex non-interactively with a well-scoped prompt:
 
 ```bash
 codex --approval-mode full-auto "<task>"
