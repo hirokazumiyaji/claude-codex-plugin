@@ -33,15 +33,17 @@ export OPENAI_API_KEY=sk-...
 Inside the Claude Code chat interface, run:
 
 ```
+/plugin marketplace add hirokazumiyaji/claude-codex-plugin
 /plugin marketplace update
-/plugin install hirokazumiyaji/claude-codex-plugin
+/plugin install claude-codex-plugin@claude-codex-plugin-marketplace
 ```
 
 Or via the Claude CLI:
 
 ```bash
+claude plugin marketplace add hirokazumiyaji/claude-codex-plugin
 claude plugin marketplace update
-claude plugin install hirokazumiyaji/claude-codex-plugin
+claude plugin install claude-codex-plugin@claude-codex-plugin-marketplace
 ```
 
 If you manage marketplaces manually, you can also add this repository itself as a marketplace:
