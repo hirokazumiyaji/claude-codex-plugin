@@ -44,6 +44,12 @@ claude plugin marketplace update
 claude plugin install hirokazumiyaji/claude-codex-plugin
 ```
 
+If you manage marketplaces manually, you can also add this repository itself as a marketplace:
+
+```bash
+claude plugin marketplace add hirokazumiyaji/claude-codex-plugin
+```
+
 > For full Claude Code plugin documentation, see the [Claude Code plugin guide](https://docs.claude.ai/en/docs/claude-code/plugins).
 
 ## Usage
