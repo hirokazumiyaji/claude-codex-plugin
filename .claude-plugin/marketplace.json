@@ -1,0 +1,32 @@
+{
+  "name": "claude-codex-plugin",
+  "display_name": "Claude Codex Plugin",
+  "version": "1.0.0",
+  "description": "OpenAI Codex CLI integration for Claude Code — run Codex tasks directly from Claude",
+  "short_description": "Run Codex CLI tasks directly from your Claude Code session.",
+  "keywords": [
+    "codex",
+    "openai",
+    "code-review",
+    "ai",
+    "claude-code"
+  ],
+  "author": {
+    "name": "hirokazumiyaji",
+    "url": "https://github.com/hirokazumiyaji"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hirokazumiyaji/claude-codex-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hirokazumiyaji/claude-codex-plugin"
+  },
+  "runtime": "claude-code",
+  "entry": ".claude-plugin/plugin.json",
+  "commands": [
+    {
+      "name": "codex:run",
+      "description": "Run a Codex CLI task from Claude Code."
+    }
+  ]
+}
