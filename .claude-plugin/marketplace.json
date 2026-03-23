@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "claude-codex-plugin",
-      "source": "./.claude-plugin/plugin.json",
+      "source": "./.claude-plugin",
       "description": "OpenAI Codex CLI integration for Claude Code — run Codex tasks directly from Claude"
     }
   ]
