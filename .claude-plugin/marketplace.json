@@ -1,8 +1,7 @@
 {
   "name": "claude-codex-plugin-marketplace",
   "owner": {
-    "name": "hirokazumiyaji",
-    "email": "260442+hirokazumiyaji@users.noreply.github.com"
+    "name": "hirokazumiyaji"
   },
   "plugins": [
     {
