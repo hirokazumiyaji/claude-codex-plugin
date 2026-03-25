@@ -7,6 +7,7 @@ allowed-tools: Bash(codex:*), Bash(git:*)
 # Codex CLI Run
 
 Delegate a coding task to OpenAI Codex CLI and present the results.
+Keep this file in sync with `commands/default.md` (`/codex` default entrypoint).
 
 ## Context
 
@@ -55,7 +56,9 @@ codex --version 2>/dev/null || echo "NOT_INSTALLED"
 
 ### Run Codex Task
 
-Once prerequisites are met, invoke Codex non-interactively with the given task:
+Once prerequisites are met, invoke Codex non-interactively with the given task.
+If the user provides `--approval-mode`, use their value as-is.
+Only when `--approval-mode` is not provided, use `full-auto`:
 
 ```bash
 codex --approval-mode full-auto "$TASK"
@@ -67,7 +70,7 @@ Where `$TASK` comes from `$ARGUMENTS`. Common patterns:
 - `codex --approval-mode full-auto "Refactor the function in src/foo.ts to improve readability"`
 - `codex --approval-mode full-auto "Write unit tests for src/bar.ts"`
 
-Pass through any `--model` or `--approval-mode` flags specified in `$ARGUMENTS`.
+Pass through any `--model` or `--approval-mode` flags specified in `$ARGUMENTS` unchanged.
 
 ### Present Results
 
