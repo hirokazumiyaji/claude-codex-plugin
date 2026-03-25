@@ -55,7 +55,8 @@ codex --version 2>/dev/null || echo "NOT_INSTALLED"
 
 ### Run Codex Task
 
-Once prerequisites are met, invoke Codex non-interactively with the given task:
+Once prerequisites are met, invoke Codex non-interactively with the given task.
+If the user does not provide `--approval-mode`, you must use `full-auto`:
 
 ```bash
 codex --approval-mode full-auto "$TASK"

@@ -74,7 +74,7 @@ Group findings by severity and create a task list for actionable issues:
 ## Codex Review Results
 
 ### 🔴 Critical
-- [ ] `src/auth/login.ts:42` — SQL injection risk: user input not sanitised before query
+- [ ] `src/auth/login.ts:42` — SQL injection risk: user input not sanitized before query
 
 ### 🟠 High
 - [ ] `src/api/users.ts:87` — Async function missing `await`, may return undefined
