@@ -57,18 +57,27 @@ codex --version 2>/dev/null || echo "NOT_INSTALLED"
 ### Run Codex Task
 
 Once prerequisites are met, invoke Codex non-interactively with the given task.
-If the user provides `--approval-mode`, use their value as-is.
-Only when `--approval-mode` is not provided, use `full-auto` (it applies edits and runs commands without confirmation):
+Handle `$ARGUMENTS` as follows:
+
+1. Extract supported Codex CLI flags from `$ARGUMENTS` into `$CODEX_FLAGS`:
+   - `--model <model>`
+   - `--approval-mode <mode>`
+2. Treat the remaining text as `$TASK` (task description).
+3. If `--approval-mode` was not provided, append `--approval-mode full-auto` to `$CODEX_FLAGS`.
+
+`full-auto` applies edits and runs commands without confirmation.
+
+Then run:
 
 ```bash
-codex --approval-mode full-auto "$TASK"
+codex $CODEX_FLAGS "$TASK"
 ```
 
-Where `$TASK` comes from `$ARGUMENTS`. Common patterns:
+Common patterns:
 
-- `codex --approval-mode full-auto "Review the current code changes for bugs and security issues"`
-- `codex --approval-mode full-auto "Refactor the function in src/foo.ts to improve readability"`
-- `codex --approval-mode full-auto "Write unit tests for src/bar.ts"`
+- If user passes no flags: `codex --approval-mode full-auto "Review the current code changes for bugs and security issues"`
+- If user passes model only: `codex --model gpt-5 --approval-mode full-auto "Refactor the function in src/foo.ts to improve readability"`
+- If user passes approval mode: `codex --approval-mode suggest "Write unit tests for src/bar.ts"`
 
 Pass through any `--model` or `--approval-mode` flags specified in `$ARGUMENTS` unchanged.
 
