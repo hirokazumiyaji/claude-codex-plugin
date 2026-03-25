@@ -7,7 +7,7 @@ allowed-tools: Bash(codex:*), Bash(git:*)
 # Codex CLI Run
 
 Delegate a coding task to OpenAI Codex CLI and present the results.
-Keep this file in sync with `commands/default.md` (`/codex` default entrypoint).
+Keep this file in sync with `commands/run.md` (`/codex:run` explicit entrypoint).
 
 ## Context
 

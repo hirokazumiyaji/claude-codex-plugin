@@ -59,16 +59,16 @@ claude plugin marketplace add hirokazumiyaji/claude-codex-plugin
 ### Run a Codex task
 
 ```
-/codex:run <task description>
+/codex <task description>
 ```
 
 Examples:
 
 ```
-/codex:run Review the current changes for bugs and security issues
-/codex:run Write unit tests for src/auth/login.ts
-/codex:run Refactor the `processOrder` function to reduce complexity
-/codex:run Fix the failing test in tests/api.test.ts
+/codex Review the current changes for bugs and security issues
+/codex Write unit tests for src/auth/login.ts
+/codex Refactor the `processOrder` function to reduce complexity
+/codex Fix the failing test in tests/api.test.ts
 ```
 
 ### Natural Language
@@ -93,16 +93,16 @@ This plugin ships with cross-platform skills that work with Codex CLI and other 
 
 | Skill | Description |
 |-------|-------------|
-| `code-review` | Review code changes for bugs, security issues, and quality problems |
+| `codex-code-review` | Review code changes for bugs, security issues, and quality problems |
 
 Install skills directly to Codex CLI:
 
 ```bash
 # Project-level
-cp -r skills/code-review .codex/skills/
+cp -r skills/codex-code-review .codex/skills/
 
 # Global
-cp -r skills/code-review ~/.codex/skills/
+cp -r skills/codex-code-review ~/.codex/skills/
 ```
 
 Or use the `skills` package manager (if installed):
