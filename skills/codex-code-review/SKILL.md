@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: codex-code-review
 description: Review code changes using OpenAI Codex CLI. Use when the user asks for a code review, wants to check for bugs or security issues, or wants feedback on their changes before committing or merging.
 ---
 
